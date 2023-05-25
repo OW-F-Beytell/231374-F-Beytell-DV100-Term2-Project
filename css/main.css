@@ -1,3 +1,11 @@
 html {
     width: 100%;
 }
+.active{
+    font-weight: bold;
+}
+.trademark{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
