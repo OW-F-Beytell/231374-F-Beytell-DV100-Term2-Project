@@ -8,4 +8,63 @@ html {
     color: white;
     font-weight: bold;
     text-align: center;
+    margin: 0 auto;
+    padding-top: 125px;
+}
+
+.bg-superSubOrange {
+    background-color: #FD6824 !important;
+}
+
+.textOn-primary {
+    color: white !important;
+}
+
+.socials{
+    margin-top: 112px;
+}
+ul{
+    list-style: none;
+}
+.social-icon{
+    height: 50px;
+    width: 50px;
+    margin-left: 20px;
+    border-radius: 50%;
+    float: right;
+}
+.hero_image{
+    margin-top: -200px;
+    width: 800px;
+    float: right;
+}
+
+.jumbotron{
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+}
+.carousel-caption{
+    color: #2b2b2b;
+}
+
+.monthSection{
+    margin: 0 auto !important;
+    text-align: center;
+}
+
+.monthSubIngredients{
+    margin: 0 auto;
+    text-align: center;
+}
+.monthSubIngredients ul {
+    list-style: none;
+    float: left;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+}
+.monthSubIngredients ul li{
+    margin: 0 auto;
+    float: left;
+    text-align: left;
 }

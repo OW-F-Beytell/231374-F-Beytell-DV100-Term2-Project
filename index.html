@@ -17,46 +17,142 @@
     <title>Home Page</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FD6824; color: white;">
-        <a class="navbar-brand" href="index.html" style="color: white;"><img src="assets/logo/Super Subs logo-2.png" style="height:80px;"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-superSubOrange">
+      <a class="navbar-brand" href="index.html" style="color: white;"><img src="assets/logo/Super Subs logo-2.png" style="height:80px;"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link textOn-primary" href="index.html">Home
+              <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item textOn-primary">
+            <a class="nav-link textOn-primary" href="pages/buildasub.html">Build a Sub!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link textOn-primary" href="pages/checkout.html">Checkout</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="jumbotron hero" style="background-image: url('assets/images/herosection_bg.jpg'); background-position: center; background-size: cover;">
+      <h1 class="display-4">SUPER SUBS</h1>
+      <p class="lead">Supercharge Your Sandwich Game!<br> Our mouthwatering creations are guaranteed to take your taste buds on an unforgettable adventure.</p>
+      <div class="hero_image"><img src="assets/images/herosection_sub.png" style="width: 100%"></div>
+      <div class="spacer" style="height: 200px;"></div>
+      <p>Ready to satisfy your cravings? Craft your own masterpiece or explore our mouthwatering Subs of the Month</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg bg-superSubOrange" href="pages/buildasub.html" role="button" style="border: #FD6824 !important;">Get building!</a>
+      </p>
       
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html" style="color: white;">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/buildasub.html" style="color: white;">Build a Sub!</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="pages/checkout.html" style="color: white;">Checkout</a>
-              </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-          </form>
+      
+      <div class="row" style="margin-top: 100px; padding-bottom: 100px;">
+        <div class="col-6">
+          <div class="monthSection" style="height: 550px; width: 53.5%; padding: 0;">
+            <h1 class="display-6">Subs of The Month</h1>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 100%;">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" style="filter: invert(100);"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1" style="filter: invert(100);"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2" style="filter: invert(100);"></li>
+              </ol>
+              <div class="carousel-inner" style="height: 500px; background-color: rgba(0, 0, 0, 0.05);">
+                <div class="carousel-item active">
+                  <img src="assets/images/monthSubs/the_kernel.png" alt="The Kernel" style="height: 200px; padding: 0 auto; margin-bottom: 150px; margin-top: 50px;">
+                  <div class="carousel-caption d-none d-md-block" style="font-weight: normal;">
+                    <div class="monthSubName"><h5>The Kernel</h5></div>
+                    <div class="monthSubIngredients">
+                      <ul>
+                        <li><strong>Bread: </strong>Sesame Seed Roll</li>
+                        <li><strong>Toppings: </strong>Fried Chicken, Tomato, Jalapeño Peppers, Shredded Lettuce, Chillies</li>
+                        <li><strong>Sauces: </strong>Tangy Mayonnaise</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <img src="assets/images/monthSubs/the_cold_cut.png" alt="The Cold Cut" style="height: 200px; margin-bottom: 150px; margin-top: 50px;">
+                  <div class="carousel-caption d-none d-md-block" style="font-weight: normal;">
+                    <div class="monthSubName"><h5>The Cold Cut</h5></div>
+                    <div class="monthSubIngredients">
+                      <ul>
+                        <li><strong>Bread: </strong>Base Roll</li>
+                        <li><strong>Toppings: </strong>Ham, Salami, Gherkins, Tomato, Shredded Lettuce</li>
+                        <li><strong>Sauces: </strong>Mustard</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <img src="assets/images/monthSubs/the_tony_tacchino.png" alt="The Cold Cut" style="height: 200px; margin-bottom: 150px; margin-top: 50px;">
+                  <div class="carousel-caption d-none d-md-block" style="font-weight: normal;">
+                    <div class="monthSubName"><h5>The Tony Tacchino</h5></div>
+                    <div class="monthSubIngredients">
+                      <ul>
+                        <li><strong>Bread: </strong>Base Roll</li>
+                        <li><strong>Toppings: </strong>Smoked Turkey, Mozzarella,  Peppers, Red Onion, Tomato</li>
+                        <li><strong>Sauces: </strong>Secret Sub Sauce</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(100);"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(100);"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
         </div>
-      </nav>
+        <div class="col-6" style="text-align: center; padding: 0;">
+          <h1 class="display-6">About Us</h1>  
+          <div class="about-us-content" style="margin: 0 auto; text-align: left; width: 80%;">
+            <p>Welcome to Super Subs, the South African-owned sub sandwich haven that is revolutionizing the way you enjoy your favorite handheld delight! Established in 2023, our passionate team set out on a mission to bring the ultimate sub experience to the vibrant culinary landscape of South Africa.</p>
+            <p>At Super Subs, we believe that a sub sandwich is more than just a meal — it's an art form! We take pride in our commitment to excellence, from the moment we source the freshest ingredients to the second you sink your teeth into one of our mouthwatering creations.</p>
+            <p>As a South African-owned company, we are deeply rooted in our local community. We proudly support local farmers and suppliers.</p>
+            <p>Join us at Super Subs and embark on a sub adventure like no other. We are honored to serve you and share in the joy of exceptional flavors, South African pride, and the artistry of the sub sandwich. Indulge in a sub experience that will leave you craving more, one bite at a time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer>
-        <div class="container-fluid">
-            <br>
-            <div class="row" style="background-color: #FD6824;">
-                <div class="col-4">
-                    <img src="assets/logo/Super Subs logo-1.png" style="height: 300px">
-                </div>
-                <div class="col-4">
-                    <div class="trademark">SUPER SUBS <strong>©</strong> 2023</div>
-                </div>
-                <div class="col-4">
-                    
-                </div>
+      <div class="container-fluid bg-superSubOrange">
+        <div class="row">
+          <div class="col-4">
+            <img src="assets/logo/Super Subs logo-1.png" style="height: 275px;">
+          </div>
+          <div class="col-4">
+            <div class="trademark">
+              SUPER SUBS<strong>© </strong>2023
             </div>
+          </div>
+          <div class="col-4">
+            <ul class="socials">
+              <a href="https://www.youtube.com/"><li><div class="social-icon"><img src="../assets/social/youtube_icon.svg" height="100%" width="100%"></div></li></a>
+              <a href="https://www.facebook.com/"><li><div class="social-icon"><img src="../assets/social/facebook_icon.svg" height="100%" width="100%"></div></li></a>
+              <a href="https://twitter.com/"><li><div class="social-icon"><img src="../assets/social/twitter_icon.svg" height="100%" width="100%"></div></li></a>
+              <a href="https://www.instagram.com/"><li><div class="social-icon"><img src="../assets/social/instagram_icon.svg" height="100%" width="100%"></div></li></a>
+            </ul>
+          </div>
         </div>
+      </div>
     </footer>
+    
   </body>
 </html>
