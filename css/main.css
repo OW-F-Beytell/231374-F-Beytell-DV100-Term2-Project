@@ -12,6 +12,13 @@ html {
     padding-top: 125px;
 }
 
+body{
+    font-family: 'DM Sans', sans-serif;
+}
+h1{
+    font-family: 'DM Serif Display', serif;
+}
+
 .bg-superSubOrange {
     background-color: #FD6824 !important;
 }
