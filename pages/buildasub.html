@@ -50,8 +50,8 @@
     <div class="container-fluid">
       <div class="row build_a_sub_content" style="margin-bottom: 40px;">
         <div class="col-6">
-          <div class="customisationForm" style="padding-left: 15%; padding-right: 15%;">
-            <form>
+          <div class="customisationForm" id="customisationForm" style="padding-left: 15%; padding-right: 15%;">
+            <form onload="getSubDetails()" onchange="getSubDetails()">
               <h1>Build a Sub</h1>
 
               <div class="form-group">
@@ -62,13 +62,13 @@
               <div class="form-group">
                 <label for="breadChoice"><strong>Choose your bread type</strong></label>
                 <select class="form-control" id="breadChoice">
-                  <option data-cost="8">Base Roll</option>
-                  <option data-cost="10">Sesame Seed Roll</option>
-                  <option data-cost="12">Rye Bread</option>
-                  <option data-cost="10">Wholewheat Bread</option>
-                  <option data-cost="12">Sourdough Bread</option>
-                  <option data-cost="14">Garlic Bread</option>
-                  <option data-cost="14">Baguette</option>
+                  <option>Base Roll</option>
+                  <option>Sesame Seed Roll</option>
+                  <option>Rye Bread</option>
+                  <option>Wholewheat Bread</option>
+                  <option>Sourdough Bread</option>
+                  <option>Garlic Bread</option>
+                  <option>Baguette</option>
                 </select>
               </div>
 
@@ -89,7 +89,7 @@
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" name="toppings" type="checkbox" value="Smoked Turkey" id="Ham" data-cost="15">
+                      <input class="form-check-input" name="toppings" type="checkbox" value="Smoked Turkey" id="Smoked Turkey" data-cost="15">
                       <label class="form-check-label" for="Smoked Turkey">
                         Smoked Turkey
                       </label>
@@ -344,7 +344,7 @@
                 </div>
               </div>
 
-              <h4 style="margin-top: 40px;"><strong>Price:</strong> R45.00</h4>
+              <h4 style="margin-top: 40px;" id="runningPrice"><strong>Price:</strong> R0.00</h4>
 
               <p class="lead">
                 <a class="btn btn-primary btn-lg bg-superSubOrange" role="button" style="margin-top: 40px;" onclick="makeMySub()">Add Sub to Your Order</a>
@@ -365,12 +365,12 @@
                     <strong>Bread Type:</strong> Sesame Seed Roll
                     <br><strong>Toppings:</strong> Fried Chicken, Tomato, Jalapeño Peppers, Shredded Lettuce, Chillies
                     <br><strong>Sauce(s):</strong> Tangy Mayonnaise
-                    <h5><strong>Price:</strong> R45.00</h5>
+                    <h5><strong>Price:</strong> R0.00</h5>
                   </p>
                 </div>
               </div>
             </div>
-            <h4 style="margin-top: 40px;"><strong>Total cost:</strong> R45.00</h4>
+            <h4 style="margin-top: 40px;"><strong>Total cost:</strong> R0.00</h4>
             <p class="lead">
               <a class="btn btn-primary btn-lg bg-superSubOrange" href="../pages/checkout.html" role="button" style="margin-top: 40px;">Go to Checkout!</a>
             </p>
