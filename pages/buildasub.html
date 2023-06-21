@@ -21,7 +21,7 @@
     <title>Build A Sub!</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-superSubOrange">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-superSubOrange" style="margin-bottom: 40px;">
       <a class="navbar-brand" href="../index.html" style="color: white;"><img src="../assets/logo/Super Subs logo-2.png" style="height:80px;"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -51,7 +51,7 @@
       <div class="row build_a_sub_content" style="margin-bottom: 40px;">
         <div class="col-6">
           <div class="customisationForm" id="customisationForm" style="padding-left: 15%; padding-right: 15%;">
-            <form onload="getSubDetails()" onchange="getSubDetails()">
+            <form onchange="getSubDetails()">
               <h1>Build a Sub</h1>
 
               <div class="form-group">
@@ -344,7 +344,7 @@
                 </div>
               </div>
 
-              <h4 style="margin-top: 40px;" id="runningPrice"><strong>Price:</strong> R0.00</h4>
+              <h4 style="margin-top: 40px;" id="runningPrice"><strong>Price: </strong>R 8.00</h4>
 
               <p class="lead">
                 <a class="btn btn-primary btn-lg bg-superSubOrange" role="button" style="margin-top: 40px;" onclick="makeMySub()">Add Sub to Your Order</a>
@@ -358,21 +358,11 @@
           <div class="orderBox" style="padding-left: 15%; padding-right: 15%;">
             <h1>Current Order</h1>
             <div class="cardsContainer" id="listOfSubs">
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h4 class="card-title"><strong>Sub Name</strong></h4>
-                  <p class="card-text">
-                    <strong>Bread Type:</strong> Sesame Seed Roll
-                    <br><strong>Toppings:</strong> Fried Chicken, Tomato, Jalapeño Peppers, Shredded Lettuce, Chillies
-                    <br><strong>Sauce(s):</strong> Tangy Mayonnaise
-                    <h5><strong>Price:</strong> R0.00</h5>
-                  </p>
-                </div>
-              </div>
+              
             </div>
-            <h4 style="margin-top: 40px;"><strong>Total cost:</strong> R0.00</h4>
+            <h4 style="margin-top: 40px;" id="runningTotal"><strong>Total cost:</strong> R 0.00</h4>
             <p class="lead">
-              <a class="btn btn-primary btn-lg bg-superSubOrange" href="../pages/checkout.html" role="button" style="margin-top: 40px;">Go to Checkout!</a>
+              <a class="btn btn-primary btn-lg bg-superSubOrange" onclick="goToCheckout()" role="button" style="margin-top: 40px;">Go to Checkout!</a>
             </p>
           </div>
           

@@ -16,11 +16,12 @@
 
     <!-- Internal documents -->
     <link rel="stylesheet" href="../css/main.css">
+    <script src="../scripts/checkout.js"></script>
     <script src="../scripts/buildasub.js"></script>
 
     <title>Checkout Page</title>
   </head>
-  <body>
+  <body onload="showOrder()">
     <nav class="navbar navbar-expand-lg navbar-light bg-light bg-superSubOrange">
       <a class="navbar-brand" href="../index.html" style="color: white;"><img src="../assets/logo/Super Subs logo-2.png" style="height:80px;"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,21 +61,13 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
                   <th scope="col">Name</th>
                   <th scope="col">Construction</th>
                   <th scope="col">Price</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>The Kernel</td>
-                  <td><strong>Bread Type:</strong> Sesame Seed Roll
-                    <br><strong>Toppings:</strong> Fried Chicken, Tomato, Jalapeño Peppers, Shredded Lettuce, Chillies
-                    <br><strong>Sauce(s):</strong> Tangy Mayonnaise</td>
-                  <td>R45.00</td>
-                </tr>
+              <tbody id="tableSubs">
+                
               </tbody>
             </table>
           </div>
@@ -114,10 +107,10 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>R45.00</td>
+                  <td id="totalArea">R 45.00</td>
                   <td>Yes</td>
-                  <td>-15% (-R6.75)</td>
-                  <td>R38.25</td>
+                  <td>-15% (- R 6.75)</td>
+                  <td>R 38.25</td>
                 </tr>
               </tbody>
             </table>
@@ -128,7 +121,7 @@
             <h1>Finalise Order</h1>
             <p>Are you sure your order is correct? Click the button to confirm.</p>
             <p class="lead">
-              <a class="btn btn-primary btn-lg bg-superSubOrange" role="button" href="" style="margin-top: -5px;">Confirm Order</a>
+              <a class="btn btn-primary btn-lg bg-superSubOrange" role="button" href="" style="margin-top: -5px;" onclick="resetHome()">Confirm Order</a>
             </p>
           </div>
         </div>

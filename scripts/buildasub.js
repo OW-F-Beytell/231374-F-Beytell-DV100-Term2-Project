@@ -1,102 +1,150 @@
-console.log("test");
+let listSubs = [];
 
 makeMySub = () => {
-    console.log("hello world");
     let thisSub = getSubDetails();
-    let outName = "Generic Name";
-    if (thisSub.name.value != "") {
-        outName = thisSub.name.value;
-    }
     
-    let toppings = getToppingsArr();
-    let toppingsArr = [];
-    for (let i = 0; i < toppings.length; i++) {
-        if (toppings[i].checked) {
-            toppingsArr.push(toppings[i].value);
-        }
-    }
-    let sauces = getSaucesArr();
-    let saucesArr = [];
-    for (let i = 0; i < sauces.length; i++) {
-        if (sauces[i].checked) {
-            saucesArr.push(sauces[i].value);
-        }
-    }
+    let toppings = convertArrayToString(getToppingsArr());
+    let sauces = convertArrayToString(getSaucesArr());
+    
     let price = determinePrice();
+
+    listSubs.push(thisSub);
+
+    let totalPrice = 0;
+    for (let i = 0; i < listSubs.length; i++) {
+        totalPrice += listSubs[i].price;        
+    }
 
     document.getElementById("listOfSubs").innerHTML += `
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <h4 class="card-title"><strong>${outName}</strong></h4>
+                <h4 class="card-title"><strong>${thisSub.name}</strong></h4>
                 <p class="card-text">
-                    <strong>Bread Type:</strong> ${thisSub.breadType.value}
-                    <br><strong>Toppings:</strong> ${toppingsArr.join(", ")}
-                    <br><strong>Sauce(s):</strong> ${saucesArr.join(", ")}
-                    <h5><strong>Price:</strong> R${price}.00</h5>
+                    <strong>Bread Type:</strong> ${thisSub.breadType}
+                    <br><strong>Toppings:</strong> ${toppings.join(", ")}
+                    <br><strong>Sauce(s):</strong> ${sauces.join(", ")}
+                    <h5><strong>Price:</strong> R ${price}.00</h5>
                 </p>
             </div>
         </div>
     `
+    document.getElementById("runningTotal").innerHTML = `
+        <strong>Total cost:</strong> R ${totalPrice}.00
+    `
+    
     clearForm();
 }
-getToppingsArr = () => {
-    let toppingsArr = [];
 
-    toppingsArr.push(document.getElementById("Ham")); 
-    toppingsArr.push(document.getElementById("Salami")); 
-    toppingsArr.push(document.getElementById("Smoked Turkey")); 
-    toppingsArr.push(document.getElementById("Fried Chicken")); 
-    toppingsArr.push(document.getElementById("Roast Beef")); 
-    toppingsArr.push(document.getElementById("Bacon")); 
-    toppingsArr.push(document.getElementById("Pepperoni")); 
-    toppingsArr.push(document.getElementById("Prosciutto")); 
-    toppingsArr.push(document.getElementById("Tuna")); 
-    toppingsArr.push(document.getElementById("Grilled Chicken")); 
-    toppingsArr.push(document.getElementById("Pastrami")); 
-    toppingsArr.push(document.getElementById("Sliced Pork")); 
-    toppingsArr.push(document.getElementById("Meatballs")); 
-    toppingsArr.push(document.getElementById("Cheddar Cheese")); 
-    toppingsArr.push(document.getElementById("Swiss Cheese")); 
-    toppingsArr.push(document.getElementById("Provolone Cheese")); 
-    toppingsArr.push(document.getElementById("Pepper Jack Cheese")); 
-    toppingsArr.push(document.getElementById("Feta Cheese")); 
-    toppingsArr.push(document.getElementById("Tomato")); 
-    toppingsArr.push(document.getElementById("Gherkins")); 
-    toppingsArr.push(document.getElementById("Peppers")); 
-    toppingsArr.push(document.getElementById("Jalapeño Peppers")); 
-    toppingsArr.push(document.getElementById("Red Onion")); 
-    toppingsArr.push(document.getElementById("Sweet Onion")); 
-    toppingsArr.push(document.getElementById("Shredded Lettuce")); 
-    toppingsArr.push(document.getElementById("Cucumber Slices")); 
-    toppingsArr.push(document.getElementById("Avocado Slices")); 
-    toppingsArr.push(document.getElementById("Olives")); 
-    toppingsArr.push(document.getElementById("Mushrooms")); 
-    toppingsArr.push(document.getElementById("Sun-Dried Tomatoes")); 
-    toppingsArr.push(document.getElementById("Pineapple Chunks")); 
-    toppingsArr.push(document.getElementById("Guacamole")); 
-    toppingsArr.push(document.getElementById("Onion Rings"));
+getSubDetails = () => {
+    let subName = document.getElementById("subName").value;
+    if (subName == "") {
+        subName = "Generic Name";
+    }
+
+    let subBread = document.getElementById("breadChoice").value;
+    let currPrice = determinePrice();
+    let toppingsArr = getToppingsArr();
+    let saucesArr = getSaucesArr();
+
+    
+
+    let thisSub = {
+        name: subName,
+        breadType: subBread,
+        toppings: toppingsArr,
+        sauces: saucesArr,
+        price: currPrice
+    }
+
+    document.getElementById("runningPrice").innerHTML = `
+        <strong>Price:</strong> R ${thisSub.price}.00</h4>
+    `
+    return thisSub;
+}
+
+convertArrayToString = (inArray) => {
+    let stringArray = [];
+    for (let i = 0; i < inArray.length; i++) {
+        stringArray[i] = inArray[i].value;
+    }
+
+    return stringArray;
+}
+
+getToppingsArr = () => {
+    // Get an array of all possible toppings //
+    let allToppingsArr = [];
+
+    allToppingsArr.push(document.getElementById("Ham")); 
+    allToppingsArr.push(document.getElementById("Salami")); 
+    allToppingsArr.push(document.getElementById("Smoked Turkey")); 
+    allToppingsArr.push(document.getElementById("Fried Chicken")); 
+    allToppingsArr.push(document.getElementById("Roast Beef")); 
+    allToppingsArr.push(document.getElementById("Bacon")); 
+    allToppingsArr.push(document.getElementById("Pepperoni")); 
+    allToppingsArr.push(document.getElementById("Prosciutto")); 
+    allToppingsArr.push(document.getElementById("Tuna")); 
+    allToppingsArr.push(document.getElementById("Grilled Chicken")); 
+    allToppingsArr.push(document.getElementById("Pastrami")); 
+    allToppingsArr.push(document.getElementById("Sliced Pork")); 
+    allToppingsArr.push(document.getElementById("Meatballs")); 
+    allToppingsArr.push(document.getElementById("Cheddar Cheese")); 
+    allToppingsArr.push(document.getElementById("Swiss Cheese")); 
+    allToppingsArr.push(document.getElementById("Provolone Cheese")); 
+    allToppingsArr.push(document.getElementById("Pepper Jack Cheese")); 
+    allToppingsArr.push(document.getElementById("Feta Cheese")); 
+    allToppingsArr.push(document.getElementById("Tomato")); 
+    allToppingsArr.push(document.getElementById("Gherkins")); 
+    allToppingsArr.push(document.getElementById("Peppers")); 
+    allToppingsArr.push(document.getElementById("Jalapeño Peppers")); 
+    allToppingsArr.push(document.getElementById("Red Onion")); 
+    allToppingsArr.push(document.getElementById("Sweet Onion")); 
+    allToppingsArr.push(document.getElementById("Shredded Lettuce")); 
+    allToppingsArr.push(document.getElementById("Cucumber Slices")); 
+    allToppingsArr.push(document.getElementById("Avocado Slices")); 
+    allToppingsArr.push(document.getElementById("Olives")); 
+    allToppingsArr.push(document.getElementById("Mushrooms")); 
+    allToppingsArr.push(document.getElementById("Sun-Dried Tomatoes")); 
+    allToppingsArr.push(document.getElementById("Pineapple Chunks")); 
+    allToppingsArr.push(document.getElementById("Guacamole")); 
+    allToppingsArr.push(document.getElementById("Onion Rings"));
+
+    // Get an array of the toppings that are added //
+    let toppingsArr = [];
+    for (let i = 0; i < allToppingsArr.length; i++) {
+        if (allToppingsArr[i].checked) {
+            toppingsArr.push(allToppingsArr[i]);
+        }
+    }
 
     return toppingsArr;
 }
-
 getSaucesArr = () => {
-    let saucesArr = [];
+    // Get an array of all possible sauces //
+    let allSaucesArr = [];
 
-    saucesArr.push(document.getElementById("Tangy Mayonnaise")); 
-    saucesArr.push(document.getElementById("Mustard")); 
-    saucesArr.push(document.getElementById("Honey Mustard")); 
-    saucesArr.push(document.getElementById("Sweet Chilli")); 
-    saucesArr.push(document.getElementById("BBQ Sauce")); 
-    saucesArr.push(document.getElementById("Hot Sauce")); 
-    saucesArr.push(document.getElementById("Ranch Dressing")); 
-    saucesArr.push(document.getElementById("Secret Sub Sauce")); 
+    allSaucesArr.push(document.getElementById("Tangy Mayonnaise")); 
+    allSaucesArr.push(document.getElementById("Mustard")); 
+    allSaucesArr.push(document.getElementById("Honey Mustard")); 
+    allSaucesArr.push(document.getElementById("Sweet Chilli")); 
+    allSaucesArr.push(document.getElementById("BBQ Sauce")); 
+    allSaucesArr.push(document.getElementById("Hot Sauce")); 
+    allSaucesArr.push(document.getElementById("Ranch Dressing")); 
+    allSaucesArr.push(document.getElementById("Secret Sub Sauce")); 
+
+    // Get an array of the sauces that are added //
+    let saucesArr = [];
+    for (let i = 0; i < allSaucesArr.length; i++) {
+        if (allSaucesArr[i].checked) {
+            saucesArr.push(allSaucesArr[i]);
+        }
+    }
 
     return saucesArr;
 }
 
 getBreadPrice = () =>{
     let breadType = document.getElementById("breadChoice").value;
-    let breadPrice = 0;
 
     if (breadType === "Base Roll") {
         breadPrice = 8;
@@ -115,38 +163,6 @@ getBreadPrice = () =>{
     }
 
     return breadPrice;
-}
-
-getSubDetails = () => {
-    let subName = document.getElementById("subName");
-    let subBread = document.getElementById("breadChoice");
-    let currPrice = determinePrice();
-    let toppingsArr = getToppingsArr();
-    let saucesArr = getSaucesArr();
-    let ingredientsArr = [];
-
-    for (let i = 0; i < toppingsArr.length; i++) {
-        if (toppingsArr[i].checked) {
-            ingredientsArr.push(toppingsArr[i]);
-        }
-    }
-    for (let i = 0; i < saucesArr.length; i++) {
-        if (saucesArr[i].checked) {
-            ingredientsArr.push(saucesArr[i]);
-        }
-    }
-
-    let thisSub = {
-        name: subName,
-        breadType: subBread,
-        ingredients: ingredientsArr,
-        price: currPrice
-    }
-
-    document.getElementById("runningPrice").innerHTML = `
-        <strong>Price:</strong> R${thisSub.price}</h4>
-    `
-    return thisSub;
 }
 determinePrice = () =>{
     let toppingsArr = getToppingsArr();
@@ -167,13 +183,12 @@ determinePrice = () =>{
     let price = 0;
     price += getBreadPrice();
     for (let i = 0; i < ingredientsArr.length; i++) {
-        if (ingredientsArr[i].checked) {
-            price += +ingredientsArr[i].dataset.cost;
-        }
+        price += +ingredientsArr[i].dataset.cost;
     }
 
     return price;
 }
+
 clearForm = () => {
     document.getElementById("customisationForm").innerHTML = `
         <form onload="getSubDetails()" onchange="getSubDetails()">
@@ -469,7 +484,7 @@ clearForm = () => {
         </div>
         </div>
 
-        <h4 style="margin-top: 40px;" id="runningPrice"><strong>Price:</strong> R0.00</h4>
+        <h4 style="margin-top: 40px;" id="runningPrice"><strong>Price:</strong> R8.00</h4>
 
         <p class="lead">
         <a class="btn btn-primary btn-lg bg-superSubOrange" role="button" style="margin-top: 40px;" onclick="makeMySub()">Add Sub to Your Order</a>
@@ -477,4 +492,28 @@ clearForm = () => {
 
     </form>
     `
+}
+
+goToCheckout = () =>{
+    let listSubsString = [];
+    //Convert listSubs to string//
+    for (let i = 0; i < listSubs.length; i++) {
+        let currSub = {
+            name : listSubs[i].name,
+            breadType : listSubs[i].breadType,
+            toppings : convertArrayToString(listSubs[i].toppings), 
+            sauces : convertArrayToString(listSubs[i].sauces),
+            price : listSubs[i].price
+        }
+        listSubsString.push(currSub);
+        console.log(listSubs[i].toppings);
+        console.log(convertArrayToString(listSubs[i].toppings));
+        console.log(listSubs[i].sauces);
+        console.log(convertArrayToString(listSubs[i].sauces));
+        console.log(currSub);
+    }
+
+    let data = JSON.stringify(listSubsString);
+    localStorage.setItem('subs', data);
+    window.location.href = '../pages/checkout.html';
 }
