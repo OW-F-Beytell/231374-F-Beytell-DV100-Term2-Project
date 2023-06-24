@@ -484,7 +484,7 @@ clearForm = () => {
         </div>
         </div>
 
-        <h4 style="margin-top: 40px;" id="runningPrice"><strong>Price:</strong> R8.00</h4>
+        <h4 style="margin-top: 40px;" id="runningPrice"><strong>Price:</strong> R 8.00</h4>
 
         <p class="lead">
         <a class="btn btn-primary btn-lg bg-superSubOrange" role="button" style="margin-top: 40px;" onclick="makeMySub()">Add Sub to Your Order</a>

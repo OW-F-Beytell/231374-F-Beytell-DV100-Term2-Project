@@ -87,7 +87,7 @@
                 </div>
                 <div class="col-4">
                   <p class="lead">
-                    <a class="btn btn-primary btn-lg bg-superSubOrange" href="" role="button" style="margin-top: -5px;">Apply</a>
+                    <a class="btn btn-primary btn-lg bg-superSubOrange" href="" role="button" style="margin-top: -5px;" onclick="validateCoupon()">Apply</a>
                   </p>
                 </div>
               </div>
@@ -105,12 +105,12 @@
                   <th scope="col">Final Price</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="finalSection">
                 <tr>
-                  <td id="totalArea">R 45.00</td>
-                  <td>Yes</td>
-                  <td>-15% (- R 6.75)</td>
-                  <td>R 38.25</td>
+                  <td id="totalArea">R 0.00</td>
+                  <td>No</td>
+                  <td>0% (- R 0.00)</td>
+                  <td id="finalArea">R 0.00</td>
                 </tr>
               </tbody>
             </table>
