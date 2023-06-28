@@ -23,13 +23,14 @@ showOrder = () => {
                 <td><strong>Bread Type:</strong> ${currBread}
                 <br><strong>Toppings:</strong> ${currToppings}
                 <br><strong>Sauce(s):</strong> ${currSauces}</td>
-                <td>R ${currPrice}.00</td>
+                <td>R ${currPrice.toFixed(2)}</td>
             </tr>
         `
     }
     totalArea.innerHTML = `
         R ${totalPrice}.00
     `
+    finalPrice = totalPrice;
     finalArea.innerHTML = `
         R ${finalPrice}.00
     `
@@ -39,10 +40,9 @@ validateCoupon = () => {
     let validCodes = ["PENNYWISE30", "SUPERSUBS23", "MUNCHIES50"];
     let discountAmounts = [30, 23, 50];
     let numCoupons = 3;
-    // alert("YEAHHHHH BUDDYYYYYY");
     let couponCode = document.getElementById("couponCode").value;
-    let index = 0;
 
+    let index = 0;
     for (let i = 0; i < numCoupons; i++) {
         if (validCode == false) {
             if (couponCode == validCodes[i]) {
@@ -56,18 +56,38 @@ validateCoupon = () => {
     finalPrice = totalPrice;
     
     if (validCode === true) {
-        // alert("LIGHTWEIGHT!!!!!");
         savings = totalPrice * (discountAmounts[index] / 100);
         finalPrice -= savings;
-        // alert("BROODT!!!!!");
         
         document.getElementById("finalSection").innerHTML = `
-            <tr>
-                <td id="totalArea">R ${totalPrice}.00</td>
-                <td>Yes</td>
-                <td>- ${discountAmounts[i]} % (- R ${savings}.00)</td>
-                <td id="finalArea">R ${finalPrice}.00</td>
-            </tr>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Total Price</th>
+                  <th scope="col">Discount Applied</th>
+                  <th scope="col">Discount Amount</th>
+                  <th scope="col">Final Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="totalArea">R ${totalPrice.toFixed(2)}</td>
+                  <td>Yes</td>
+                  <td>- ${discountAmounts[index]} % (- R ${savings.toFixed(2)})</td>
+                  <td id="finalArea">R ${finalPrice.toFixed(2)}</td>
+                </tr>
+              </tbody>
+            </table>
+        `
+        document.getElementById("discountSection").innerHTML = `
+            <div class="col-8">
+                <input type="text" class="form-control" id="couponCode">
+            </div>
+            <div class="col-4">
+                <p class="lead">
+                <a class="btn btn-primary btn-lg bg-superSubOrange disabled" role="button" style="margin-top: -5px;" onclick="validateCoupon()">Apply</a>
+                </p>
+            </div>
         `
     }
     else {
@@ -77,5 +97,5 @@ validateCoupon = () => {
 
 resetHome = () => {
     localStorage.removeItem('subs');
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 }

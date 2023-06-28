@@ -23,18 +23,27 @@ makeMySub = () => {
                     <strong>Bread Type:</strong> ${thisSub.breadType}
                     <br><strong>Toppings:</strong> ${toppings.join(", ")}
                     <br><strong>Sauce(s):</strong> ${sauces.join(", ")}
-                    <h5><strong>Price:</strong> R ${price}.00</h5>
+                    <h5><strong>Price:</strong> R ${price.toFixed(2)}</h5>
                 </p>
             </div>
         </div>
     `
     document.getElementById("runningTotal").innerHTML = `
-        <strong>Total cost:</strong> R ${totalPrice}.00
+        <strong>Total cost:</strong> R ${totalPrice.toFixed(2)}
     `
     
     clearForm();
 }
 
+validateSub = () => {
+    if ((getToppingsArr().length >= 5) && (getSaucesArr().length >= 1)) {
+        document.getElementById("addButton").innerHTML = `
+            <a class="btn btn-primary btn-lg bg-superSubOrange" role="button" style="margin-top: 40px;" onclick="makeMySub(); validateSub()">Add Sub to Your Order</a>
+        `
+        console.log("boom");
+    }
+    console.log(getToppingsArr().length + " " + getSaucesArr().length);
+}
 getSubDetails = () => {
     let subName = document.getElementById("subName").value;
     if (subName == "") {
@@ -46,8 +55,6 @@ getSubDetails = () => {
     let toppingsArr = getToppingsArr();
     let saucesArr = getSaucesArr();
 
-    
-
     let thisSub = {
         name: subName,
         breadType: subBread,
@@ -57,8 +64,9 @@ getSubDetails = () => {
     }
 
     document.getElementById("runningPrice").innerHTML = `
-        <strong>Price:</strong> R ${thisSub.price}.00</h4>
+        <strong>Price:</strong> R ${thisSub.price.toFixed(2)}</h4>
     `
+
     return thisSub;
 }
 
@@ -191,7 +199,7 @@ determinePrice = () =>{
 
 clearForm = () => {
     document.getElementById("customisationForm").innerHTML = `
-        <form onload="getSubDetails()" onchange="getSubDetails()">
+    <form onchange="getSubDetails(); validateSub()">
         <h1>Build a Sub</h1>
 
         <div class="form-group">
@@ -202,13 +210,13 @@ clearForm = () => {
         <div class="form-group">
         <label for="breadChoice"><strong>Choose your bread type</strong></label>
         <select class="form-control" id="breadChoice">
-            <option data-cost="8">Base Roll</option>
-            <option data-cost="10">Sesame Seed Roll</option>
-            <option data-cost="12">Rye Bread</option>
-            <option data-cost="10">Wholewheat Bread</option>
-            <option data-cost="12">Sourdough Bread</option>
-            <option data-cost="14">Garlic Bread</option>
-            <option data-cost="14">Baguette</option>
+            <option>Base Roll</option>
+            <option>Sesame Seed Roll</option>
+            <option>Rye Bread</option>
+            <option>Wholewheat Bread</option>
+            <option>Sourdough Bread</option>
+            <option>Garlic Bread</option>
+            <option>Baguette</option>
         </select>
         </div>
 
@@ -484,10 +492,10 @@ clearForm = () => {
         </div>
         </div>
 
-        <h4 style="margin-top: 40px;" id="runningPrice"><strong>Price:</strong> R 8.00</h4>
+        <h4 style="margin-top: 40px;" id="runningPrice"><strong>Price: </strong>R 8.00</h4>
 
-        <p class="lead">
-        <a class="btn btn-primary btn-lg bg-superSubOrange" role="button" style="margin-top: 40px;" onclick="makeMySub()">Add Sub to Your Order</a>
+        <p class="lead" id="addButton">
+        <a class="btn btn-primary btn-lg bg-superSubOrange disabled" role="button" style="margin-top: 40px;" onclick="makeMySub()">Add Sub to Your Order</a>
         </p>
 
     </form>
@@ -506,11 +514,6 @@ goToCheckout = () =>{
             price : listSubs[i].price
         }
         listSubsString.push(currSub);
-        console.log(listSubs[i].toppings);
-        console.log(convertArrayToString(listSubs[i].toppings));
-        console.log(listSubs[i].sauces);
-        console.log(convertArrayToString(listSubs[i].sauces));
-        console.log(currSub);
     }
 
     let data = JSON.stringify(listSubsString);

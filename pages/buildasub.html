@@ -51,7 +51,7 @@
       <div class="row build_a_sub_content" style="margin-bottom: 40px;">
         <div class="col-6">
           <div class="customisationForm" id="customisationForm" style="padding-left: 15%; padding-right: 15%;">
-            <form onchange="getSubDetails()">
+            <form onchange="getSubDetails(); validateSub()">
               <h1>Build a Sub</h1>
 
               <div class="form-group">
@@ -346,8 +346,8 @@
 
               <h4 style="margin-top: 40px;" id="runningPrice"><strong>Price: </strong>R 8.00</h4>
 
-              <p class="lead">
-                <a class="btn btn-primary btn-lg bg-superSubOrange" role="button" style="margin-top: 40px;" onclick="makeMySub()">Add Sub to Your Order</a>
+              <p class="lead" id="addButton">
+                <a class="btn btn-primary btn-lg bg-superSubOrange disabled" role="button" style="margin-top: 40px;" onclick="makeMySub()">Add Sub to Your Order</a>
               </p>
 
             </form>

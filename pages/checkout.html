@@ -81,13 +81,13 @@
                   <label for="couponCode">Do you have a coupon code? If so, enter it here to apply it to your order:</label>
                 </div>
               </div>
-              <div class="form-row">
+              <div class="form-row" id="discountSection">
                 <div class="col-8">
                   <input type="text" class="form-control" id="couponCode">
                 </div>
                 <div class="col-4">
                   <p class="lead">
-                    <a class="btn btn-primary btn-lg bg-superSubOrange" href="" role="button" style="margin-top: -5px;" onclick="validateCoupon()">Apply</a>
+                    <a class="btn btn-primary btn-lg bg-superSubOrange" role="button" style="margin-top: -5px;" onclick="validateCoupon()">Apply</a>
                   </p>
                 </div>
               </div>
@@ -95,7 +95,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12">
+          <div class="col-12" id="finalSection">
             <table class="table">
               <thead>
                 <tr>
@@ -105,7 +105,7 @@
                   <th scope="col">Final Price</th>
                 </tr>
               </thead>
-              <tbody id="finalSection">
+              <tbody>
                 <tr>
                   <td id="totalArea">R 0.00</td>
                   <td>No</td>
@@ -121,7 +121,7 @@
             <h1>Finalise Order</h1>
             <p>Are you sure your order is correct? Click the button to confirm.</p>
             <p class="lead">
-              <a class="btn btn-primary btn-lg bg-superSubOrange" role="button" href="" style="margin-top: -5px;" onclick="resetHome()">Confirm Order</a>
+              <a class="btn btn-primary btn-lg bg-superSubOrange" role="button" style="margin-top: -5px;" onclick="resetHome()">Confirm Order</a>
             </p>
           </div>
         </div>
