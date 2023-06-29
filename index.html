@@ -49,10 +49,10 @@
 
     <div class="jumbotron hero" style="background-image: url('assets/images/herosection_bg.jpg'); background-position: center; background-size: cover;">
       <h1 class="display-4">SUPER SUBS</h1>
-      <p class="lead">Supercharge Your Sandwich Game!<br> Our mouthwatering creations are guaranteed to take your taste buds on an unforgettable adventure.</p>
+      <p class="lead herotext">Supercharge Your Sandwich Game!<br> Our mouthwatering creations are guaranteed to take your taste buds on an unforgettable adventure.</p>
       <div class="hero_image"><img src="assets/images/herosection_sub.png" style="width: 100%"></div>
       <div class="spacer" style="height: 200px;"></div>
-      <p>Ready to satisfy your cravings? Craft your own masterpiece or explore our mouthwatering Subs of the Month</p>
+      <p class="herotext">Ready to satisfy your cravings? Craft your own masterpiece or explore our mouthwatering Subs of the Month</p>
       <p class="lead">
         <a class="btn btn-primary btn-lg bg-superSubOrange" href="pages/buildasub.html" role="button">Get building!</a>
       </p>
@@ -60,56 +60,162 @@
       
       <div class="row" style="margin-top: 100px; padding-bottom: 100px;">
         <div class="col-6">
-          <div class="monthSection" style="height: 550px; width: 53.5%; padding: 0;">
-            <h1 class="display-6">Subs of The Month</h1>
+          <div class="monthSection">
+            <h1 class="display-6" style="margin: 0 auto; margin-bottom: 10px;">Subs of The Month</h1>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 100%;">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" style="filter: invert(100);"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1" style="filter: invert(100);"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2" style="filter: invert(100);"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3" style="filter: invert(100);"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4" style="filter: invert(100);"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5" style="filter: invert(100);"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="6" style="filter: invert(100);"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="7" style="filter: invert(100);"></li>
               </ol>
-              <div class="carousel-inner" style="height: 500px; background-color: rgba(0, 0, 0, 0.05);">
+              <div class="carousel-inner subsCarousel">
                 <div class="carousel-item active">
-                  <img src="assets/images/monthSubs/the_kernel.png" alt="The Kernel" style="height: 200px; padding: 0 auto; margin-bottom: 150px; margin-top: 50px;">
-                  <div class="carousel-caption d-none d-md-block" style="font-weight: normal;">
-                    <div class="monthSubName"><h5>The Kernel</h5></div>
-                    <div class="monthSubIngredients">
-                      <ul>
-                        <li><strong>Bread: </strong>Sesame Seed Roll</li>
-                        <li><strong>Toppings: </strong>Fried Chicken, Tomato, Jalapeño Peppers, Shredded Lettuce, Chillies</li>
-                        <li><strong>Sauces: </strong>Tangy Mayonnaise</li>
-                      </ul>
+                  <div class="monthSubImage">
+                    <img src="assets/images/monthSubs/the_guacadelic_fiesta.png" height="100%" style="margin: 0 auto;" alt="The Guacadelic Fiesta">
+                  </div>
+                  <div class="monthSubInfo">
+                    <div class="carousel-caption d-none d-md-block">
+                      <div class="monthSubName"><h5>The Guacadelic Fiesta</h5></div>
+                      <div class="monthSubIngredients">
+                        <ul>
+                          <li><strong>Bread: </strong>Sourdough Bread</li>
+                          <li><strong>Toppings: </strong>Roast Beef, Bacon, Guacamole, Tomato, Red Onion</li>
+                          <li><strong>Sauces: </strong>Tangy Mayonnaise, Ranch Dressing</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div class="carousel-item">
-                  <img src="assets/images/monthSubs/the_cold_cut.png" alt="The Cold Cut" style="height: 200px; margin-bottom: 150px; margin-top: 50px;">
-                  <div class="carousel-caption d-none d-md-block" style="font-weight: normal;">
-                    <div class="monthSubName"><h5>The Cold Cut</h5></div>
-                    <div class="monthSubIngredients">
-                      <ul>
-                        <li><strong>Bread: </strong>Base Roll</li>
-                        <li><strong>Toppings: </strong>Ham, Salami, Gherkins, Tomato, Shredded Lettuce</li>
-                        <li><strong>Sauces: </strong>Mustard</li>
-                      </ul>
+                  <div class="monthSubImage">
+                    <img src="assets/images/monthSubs/the_kernel.png" height="100%" style="margin: 0 auto;" alt="The Kernel">
+                  </div>
+                  <div class="monthSubInfo">
+                    <div class="carousel-caption d-none d-md-block">
+                      <div class="monthSubName"><h5>The Kernel</h5></div>
+                      <div class="monthSubIngredients">
+                        <ul>
+                          <li><strong>Bread: </strong>Sesame Seed Roll</li>
+                          <li><strong>Toppings: </strong>Fried Chicken, Tomato, Jalapeño Peppers, Shredded Lettuce, Chillies</li>
+                          <li><strong>Sauces: </strong>Tangy Mayonnaise</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div class="carousel-item">
-                  <img src="assets/images/monthSubs/the_tony_tacchino.png" alt="The Cold Cut" style="height: 200px; margin-bottom: 150px; margin-top: 50px;">
-                  <div class="carousel-caption d-none d-md-block" style="font-weight: normal;">
-                    <div class="monthSubName"><h5>The Tony Tacchino</h5></div>
-                    <div class="monthSubIngredients">
-                      <ul>
-                        <li><strong>Bread: </strong>Base Roll</li>
-                        <li><strong>Toppings: </strong>Smoked Turkey, Mozzarella,  Peppers, Red Onion, Tomato</li>
-                        <li><strong>Sauces: </strong>Secret Sub Sauce</li>
-                      </ul>
+                  <div class="monthSubImage">
+                    <img src="assets/images/monthSubs/the_cold_cut.png" height="100%" style="margin: 0 auto;" alt="The Cold Cut">
+                  </div>
+                  <div class="monthSubInfo">
+                    <div class="carousel-caption d-none d-md-block">
+                      <div class="monthSubName"><h5>The Cold Cut</h5></div>
+                      <div class="monthSubIngredients">
+                        <ul>
+                          <li><strong>Bread: </strong>Base Roll</li>
+                          <li><strong>Toppings: </strong>Ham, Salami, Gherkins, Tomato, Shredded Lettuce</li>
+                          <li><strong>Sauces: </strong>Mustard</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
+
+                <div class="carousel-item">
+                  <div class="monthSubImage">
+                    <img src="assets/images/monthSubs/the_tony_tacchino.png" height="100%" style="margin: 0 auto;" alt="The Tony Tacchino">
+                  </div>
+                  <div class="monthSubInfo">
+                    <div class="carousel-caption d-none d-md-block">
+                      <div class="monthSubName"><h5>The Tony Tacchino</h5></div>
+                      <div class="monthSubIngredients">
+                        <ul>
+                          <li><strong>Bread: </strong>Base Roll</li>
+                          <li><strong>Toppings: </strong>Smoked Turkey, Mozzarella, Jalapeño Peppers, Red Onion, Tomato</li>
+                          <li><strong>Sauces: </strong>Secret Sub Sauce</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="monthSubImage">
+                    <img src="assets/images/monthSubs/the_blt_supreme.png" height="100%" style="margin: 0 auto;" alt="The BLT Supreme">
+                  </div>
+                  <div class="monthSubInfo">
+                    <div class="carousel-caption d-none d-md-block">
+                      <div class="monthSubName"><h5>The BLT Supreme</h5></div>
+                      <div class="monthSubIngredients">
+                        <ul>
+                          <li><strong>Bread: </strong>Baguette</li>
+                          <li><strong>Toppings: </strong>Bacon, Ham, Tomato, Lettuce and Onions</li>
+                          <li><strong>Sauces: </strong>Tangy Mayonnaise, Secret Sub Sauce</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="monthSubImage">
+                    <img src="assets/images/monthSubs/the_provolone_pizzazz.png" height="100%" style="margin: 0 auto;" alt="The Provolone Pizzazz">
+                  </div>
+                  <div class="monthSubInfo">
+                    <div class="carousel-caption d-none d-md-block">
+                      <div class="monthSubName"><h5>The Provolone Pizzazz</h5></div>
+                      <div class="monthSubIngredients">
+                        <ul>
+                          <li><strong>Bread: </strong>Wholewheat Bread</li>
+                          <li><strong>Toppings: </strong>Ham, Salami, Prosciutto, Cucumber, Tomato, Lettuce and Provolone</li>
+                          <li><strong>Sauces: </strong>Tangy Mayonnaise</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="monthSubImage">
+                    <img src="assets/images/monthSubs/the_classic_baller.png" height="100%" style="margin: 0 auto;" alt="The Classic Baller">
+                  </div>
+                  <div class="monthSubInfo">
+                    <div class="carousel-caption d-none d-md-block">
+                      <div class="monthSubName"><h5>The Classic Baller</h5></div>
+                      <div class="monthSubIngredients">
+                        <ul>
+                          <li><strong>Bread: </strong>Garlic Bread</li>
+                          <li><strong>Toppings: </strong>Meatballs, Pepperoni, Prosciutto, Pastrami, Sun-Dried Tomatoes</li>
+                          <li><strong>Sauces: </strong>Hot Sauce, Sweet Chilli</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="monthSubImage">
+                    <img src="assets/images/monthSubs/the_cheesy_chick.png" height="100%" style="margin: 0 auto;" alt="The Cheesy Chick">
+                  </div>
+                  <div class="monthSubInfo">
+                    <div class="carousel-caption d-none d-md-block">
+                      <div class="monthSubName"><h5>The Cheesy Chick</h5></div>
+                      <div class="monthSubIngredients">
+                        <ul>
+                          <li><strong>Bread: </strong>Rye Bread</li>
+                          <li><strong>Toppings: </strong>Grilled Chicken, Cheddar Cheese, Tomato, Shredded Lettuce, Red Onion, Cucumber, Avocado Slices</li>
+                          <li><strong>Sauces: </strong>Honey Mustard</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>            
 
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
