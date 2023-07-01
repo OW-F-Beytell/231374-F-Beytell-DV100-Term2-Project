@@ -40,12 +40,9 @@ validateSub = () => {
         document.getElementById("addButton").innerHTML = `
             <a class="btn btn-primary btn-lg bg-superSubOrange" role="button" style="margin-top: 40px;" onclick="makeMySub(); validateSub()">Add Sub to Your Order</a>
         `
+        console.log("boom");
     }
-    else {
-        document.getElementById("addButton").innerHTML = `
-            <a class="btn btn-primary btn-lg bg-superSubOrange disabled" role="button" style="margin-top: 40px;" onclick="makeMySub(); validateSub()">Add Sub to Your Order</a>
-        `
-    }
+    console.log(getToppingsArr().length + " " + getSaucesArr().length);
 }
 getSubDetails = () => {
     let subName = document.getElementById("subName").value;
