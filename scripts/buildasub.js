@@ -16,14 +16,14 @@ makeMySub = () => {
     }
 
     document.getElementById("listOfSubs").innerHTML += `
-        <div class="card" style="width: 18rem;">
+        <div class="card h-100" style="width: 48%;">
             <div class="card-body">
                 <h4 class="card-title"><strong>${thisSub.name}</strong></h4>
                 <p class="card-text">
                     <strong>Bread Type:</strong> ${thisSub.breadType}
                     <br><strong>Toppings:</strong> ${toppings.join(", ")}
                     <br><strong>Sauce(s):</strong> ${sauces.join(", ")}
-                    <h5><strong>Price:</strong> R ${price.toFixed(2)}</h5>
+                    <h5 style="bottom:0; position:absolute;"><strong>Price:</strong> R ${price.toFixed(2)}</h5>
                 </p>
             </div>
         </div>
@@ -40,9 +40,7 @@ validateSub = () => {
         document.getElementById("addButton").innerHTML = `
             <a class="btn btn-primary btn-lg bg-superSubOrange" role="button" style="margin-top: 40px;" onclick="makeMySub(); validateSub()">Add Sub to Your Order</a>
         `
-        console.log("boom");
     }
-    console.log(getToppingsArr().length + " " + getSaucesArr().length);
 }
 getSubDetails = () => {
     let subName = document.getElementById("subName").value;

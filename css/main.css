@@ -109,6 +109,8 @@ ul{
 .card{
     margin: 0 auto;
     float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .btn-primary:hover{
